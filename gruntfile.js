@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-      sass: {
+    sass: {
       options: {
         sourceMap: true
       },
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             expand: true,                  // Enable dynamic expansion 
             cwd: 'images/',                   // miejsce gdzie sa obrazki
             src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
-            dest: 'images/zoptymalizowane/'                  // miejsce gdzie maja sie zapisywac zoptymalizowane
+            dest: 'zoptymalizowane/'                  // miejsce gdzie maja sie zapisywac zoptymalizowane
           }]
         }
     },
@@ -31,10 +31,9 @@ module.exports = function(grunt) {
         } 
     }
   });
-
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['imagemin', 'sass', 'watch']);
+  grunt.registerTask('default', ['sass', 'imagemin', 'watch']);
 
 };
